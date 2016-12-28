@@ -4,13 +4,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
+import AddPlayerName from './add-player-name';
 
 class Game extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            PLAYER_X: 'X',
-            PLAYER_O: 'O',
+            players: ['X', 'O'],
+            playersNames: [],
             currentTurn: 'X',
             board: ['', '', '', '', '', '', '', '', ''],
             winner: null
@@ -21,7 +22,10 @@ class Game extends React.Component {
         return (
             <div className="game-wrapper">
                 <h1>Welcome to TicTacToe game!</h1>
-                {this.state.winner ? <h3>{`And the winner is ${this.state.winner}`}</h3> : null}
+                <AddPlayerName onAdd={this.onAdd.bind(this)}/>
+                <h3>The 'X' player is {this.state.playersNames[0]}</h3>
+                <h3>The 'O' player is {this.state.playersNames[1]}</h3>
+                {this.state.winner ? <h3>{`Congratulations, name ${this.state.winner}! You are the winner!`}</h3> : null}
                 <div className="board">
                     {this.state.board.map((cell, index) => {
                         return <div onClick={() => this.handleClick(index)} className="square" key={index}>{cell}</div>
@@ -37,14 +41,14 @@ class Game extends React.Component {
             this.state.board[index] = this.state.currentTurn;
             this.setState({
                 board: this.state.board,
-                currentTurn: this.state.currentTurn === this.state.PLAYER_X ? this.state.PLAYER_O : this.state.PLAYER_X,
+                currentTurn: this.state.currentTurn === this.state.players[0] ? this.state.players[1] : this.state.players[0],
                 winner: this.checkForWinner()
             });
         }
     }
 
     checkForWinner() {
-        var currentTurn = this.state.currentTurn;
+        var winnerPlayer = this.state.playersNames[0] ? this.state.playersNames[1] : this.state.playersNames[0];
         var symbols = this.state.board;
         var winningCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
         return winningCombinations.find((combination) => {
@@ -53,13 +57,22 @@ class Game extends React.Component {
                 symbols[combination[2]] !== '' &&
                 symbols[combination[0]] === symbols[combination[1]] &&
                 symbols[combination[1]] === symbols[combination[2]]){
-                return currentTurn;
+                return winnerPlayer;
             } else {
                 return false;
             }
 
         });
     }
+
+    onAdd(name){
+        var updPlayersNames = this.state.playersNames;
+        updPlayersNames.push(name);
+        this.setState({
+            playersNames: updPlayersNames
+        });
+    }
+
 }
 
 ReactDOM.render(<Game />, document.getElementById('app') );
