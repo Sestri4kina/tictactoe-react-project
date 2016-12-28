@@ -11,7 +11,7 @@
     height: 100px;
     width: 100px;
     box-sizing: border-box;
-    border: 3px solid gray;
+    border: 3px solid #1c1c1c;
     font-size: 4em;
     display: flex;
     justify-content: center;

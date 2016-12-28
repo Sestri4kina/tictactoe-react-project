@@ -33,7 +33,18 @@ class Game extends React.Component {
 
     //custom functions
     handleClick(index){
+        if(this.state.board[index] === '' && !this.state.winner){
+            this.state.board[index] = this.state.currentTurn;
+            this.setState({
+                board: this.state.board,
+                currentTurn: this.state.currentTurn === this.state.PLAYER_X ? this.state.PLAYER_O : this.state.PLAYER_X,
+                winner: this.checkForWinner()
+            });
+        }
+    }
 
+    checkForWinner() {
+        
     }
 }
 
