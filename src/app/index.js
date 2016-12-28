@@ -25,7 +25,7 @@ class Game extends React.Component {
                 <AddPlayerName onAdd={this.onAdd.bind(this)}/>
                 <h3>The 'X' player is {this.state.playersNames[0]}</h3>
                 <h3>The 'O' player is {this.state.playersNames[1]}</h3>
-                {this.state.winner ? <h3>{`Congratulations, name ${this.state.winner}! You are the winner!`}</h3> : null}
+                {this.state.winner ? <h3 id="congrats">{`Congratulations, ${this.state.currentTurn === 'O' ? this.state.playersNames[0] : this.state.playersNames[1]}! You are the winner!`}</h3> : null}
                 <div className="board">
                     {this.state.board.map((cell, index) => {
                         return <div onClick={() => this.handleClick(index)} className="square" key={index}>{cell}</div>

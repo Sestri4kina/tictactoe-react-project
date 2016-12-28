@@ -1,14 +1,23 @@
 body{
     background: #eee;
     margin: 20px;
-    font-family: tahoma, serf;
+    font-family: tahoma, serif;
+}
+
+h1 {
+    color: #1c1c1c;
+}
+
+#congrats {
+    color: #ffa800;
+    text-transform: uppercase;
 }
 
 #game-wrapper{
     width: 80%;
     margin: 0 auto;
     background: #fff;
-    border-top: 3px solid #8C0949;
+    border-top: 3px solid #871377;
     padding: 10px;
     border-radius: 2px;
     box-shadow: 1px 3px 5px rgba(0,0,0,0.2);
