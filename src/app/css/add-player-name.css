@@ -1,10 +1,13 @@
 #name-wrapper{
+    display: -webkit-flex;
     display: flex;
 }
 
 #name-wrapper input[type="text"]{
-    flex-basis: 0;
-    flex-grow: 7;
+    -webkit-flex-basis: auto;
+    flex-basis: auto;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
     padding: 10px;
     border: 2px solid #871377;
     border-radius: 4px 0 0 4px;
@@ -12,8 +15,10 @@
 }
 
 #name-wrapper input[type="submit"]{
-    flex-basis: 0;
-    flex-grow: 3;
+    -webkit-flex-basis: auto;
+    flex-basis: auto;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
     padding: 10px;
     background: #871377;
     border-radius: 0 4px 4px 0;

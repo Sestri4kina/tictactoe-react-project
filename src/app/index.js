@@ -5,6 +5,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
 import AddPlayerName from './add-player-name';
+//import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+import { Grid, Row, Col, PageHeader } from 'react-bootstrap';
 
 class Game extends React.Component {
     constructor(props) {
@@ -21,16 +23,31 @@ class Game extends React.Component {
     render() {
         return (
             <div className="game-wrapper">
-                <h1>Welcome to TicTacToe game!</h1>
-                <AddPlayerName onAdd={this.onAdd.bind(this)}/>
-                <h3>The 'X' player is {this.state.playersNames[0]}</h3>
-                <h3>The 'O' player is {this.state.playersNames[1]}</h3>
-                {this.state.winner ? <h3 id="congrats">{`Congratulations, ${this.state.currentTurn === 'O' ? this.state.playersNames[0] : this.state.playersNames[1]}! You are the winner!`}</h3> : null}
-                <div className="board">
-                    {this.state.board.map((cell, index) => {
-                        return <div onClick={() => this.handleClick(index)} className="square" key={index}>{cell}</div>
-                    })}
-                </div>
+                <PageHeader id="header-h1"> Welcome to TicTacToe game! </PageHeader>
+                <Grid>
+                    <Row>
+                        <Col xs={12} sm={12}  md={4}>
+                            <AddPlayerName onAdd={this.onAdd.bind(this)}/>
+                            <h3>The 'X' player is {this.state.playersNames[0]}</h3>
+                            <h3>The 'O' player is {this.state.playersNames[1]}</h3>
+                            {this.state.winner ? <h3 id="congrats">{`Congratulations, ${this.state.currentTurn === 'O' ? this.state.playersNames[0] : this.state.playersNames[1]}! You are the winner!`}</h3> : null}
+                        </Col>
+                        <Col xs={12} sm={12} md={8}>
+                            <div className="board">
+                                {this.state.board.map((cell, index) => {
+                                    return <div onClick={() => this.handleClick(index)} className="square" key={index}>{cell}</div>
+                                })}
+                            </div>
+                        </Col>
+                    </Row>
+                </Grid>
+                <Grid>
+                    <Row>
+                        <footer>
+                            <p>&copy; Practice makes perfect</p>
+                        </footer>
+                    </Row>
+                </Grid>
             </div>
         );
     }

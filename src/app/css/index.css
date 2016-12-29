@@ -2,10 +2,12 @@ body{
     background: #eee;
     margin: 20px;
     font-family: tahoma, serif;
+    color: #1c1c1c;
 }
 
-h1 {
-    color: #1c1c1c;
+#header-h1 {
+    color: #871377;
+    font-size: 1em;
 }
 
 #congrats {
@@ -14,7 +16,7 @@ h1 {
 }
 
 #game-wrapper{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     background: #fff;
     border-top: 3px solid #871377;
@@ -25,9 +27,13 @@ h1 {
 }
 
 .board {
+    display: -webkit-flex;
     display: flex;
-    width: 300px;
     height: 300px;
+    width: 300px;
+    border-radius: 4px;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: wrap;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -39,6 +45,7 @@ h1 {
     box-sizing: border-box;
     border: 3px solid #1c1c1c;
     font-size: 4em;
+    display: -webkit-flex;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,4 +57,10 @@ h1 {
     cursor: pointer;
     background-color: #ffa800;
     color: #871377;
+}
+
+p {
+    font-size: .8em;
+    color: #ffa800;
+    text-transform: uppercase;
 }
