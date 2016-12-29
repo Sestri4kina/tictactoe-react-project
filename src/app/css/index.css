@@ -31,7 +31,6 @@ body{
     display: flex;
     height: 300px;
     width: 300px;
-    border-radius: 4px;
     -webkit-flex-direction: row;
     -webkit-flex-wrap: wrap;
     flex-direction: row;
@@ -60,7 +59,11 @@ body{
 }
 
 p {
+    height: 30px;
+    margin: 10px auto 0;
+    padding: 10px;
     font-size: .8em;
     color: #ffa800;
-    text-transform: uppercase;
+    text-align: center;
+    background-color: #333;
 }
