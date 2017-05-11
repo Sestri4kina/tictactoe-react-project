@@ -1,36 +1,27 @@
-#name-wrapper{
-    /*display: -webkit-flex;
-    display: flex;
-    */
-    display: block;
+form {
+margin-left: 35%;
+margin-right: 35%;
+width: 30%;
 }
 
-#name-wrapper input[type="text"]{
-    /*-webkit-flex-basis: auto;
-    flex-basis: auto;
-    -webkit-flex-grow: 1;
-    flex-grow: 1;
-    */
-    width: 40%;
-    padding: 10px 20px;
-    margin: 10px 0;
-    border: 2px solid #871377;
-    border-radius: 4px 0 0 4px;
-    color: #777;
-}
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+ }
 
-#name-wrapper input[type="submit"]{
-    /*-webkit-flex-basis: auto;
-    flex-basis: auto;
-    -webkit-flex-grow: 1;
-    flex-grow: 1;
-    */
-    padding: 10px 20px;
-    margin: 10px 0;
-    background: #871377;
-    border-radius: 0 4px 4px 0;
-    border: 2px solid #871377;
-    color: #eee;
-    text-transform: uppercase;
-    cursor: pointer;
+input[type=submit] {
+  background-color: #8C8C8C;
+  color: #ffa800;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 700;
+  margin-left: 15%;
+  margin-right:15%;
+  width: 70%;
+  margin-bottom: 15px;
 }

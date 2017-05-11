@@ -44,7 +44,11 @@ class Game extends React.Component {
                 <Grid>
                     <Row>
                         <footer>
-                            <p>&copy; Practice makes perfect</p>
+                            <p>
+                              &copy; Practice makes perfect.
+                              Made with &hearts; by
+                              <a href="https:/sestri4kina.github.io" target="_blank"><span className="color-splash"> Sestri4kina.</span></a>
+                            </p>
                         </footer>
                     </Row>
                 </Grid>
@@ -54,6 +58,10 @@ class Game extends React.Component {
 
     //custom functions
     handleClick(index){
+        if (!this.state.playersNames[0] || !this.state.playersNames[1]) {
+          alert("Please, enter names of the players");
+          return;
+        }
         if(this.state.board[index] === '' && !this.state.winner){
             this.state.board[index] = this.state.currentTurn;
             this.setState({

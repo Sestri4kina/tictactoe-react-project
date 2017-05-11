@@ -6,12 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build",
-    "build": "webpack -d && webpack-dev-server --content-base src/ --inline --hot --port 1212"
+    "build": "webpack -d && webpack-dev-server --content-base src/ --inline --hot --port 1212",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sestri4kina/tictactoe-react-project.git"
   },
+  "homepage": "https://sestri4kina.github.io/tictactoe-react-project",
   "author": "Anastasiia Bratochkina",
   "license": "MIT",
   "dependencies": {
@@ -25,6 +27,7 @@
     "babel-preset-react": "^6.16.0",
     "bootstrap": "^3.3.7",
     "css-loader": "^0.26.1",
+    "gh-pages": "^1.0.0",
     "react-bootstrap": "^0.30.7",
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0",
